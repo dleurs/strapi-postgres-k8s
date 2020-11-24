@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: strapi-postgresql
+  name: strapi-postgresql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: strapi-postgresql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: strapi-postgresql
+    spec:
+      containers:
+      - image: dleurs/strapi-postgres-ovh:0.1.3
+        name: strapi-postgres-ovh
+        resources: {}
+        env:
+        - name: HOST
+          value: "secret"
+        - name: PORT
+          value:"secret"
+        - name: DATABASE_HOST
+          value: "secret"
+        - name: DATABASE_PORT
+          value: "secret"
+        - name: DATABASE_NAME
+          value: "secret"
+        - name: DATABASE_USERNAME
+          value: "secret"
+        - name: DATABASE_PASSWORD
+          value: "secret"
+        - name: DATABASE_SSL
+          value: "secret"
+        - name: ADMIN_JWT_SECRET
+          value: "secret"
+status: {}
