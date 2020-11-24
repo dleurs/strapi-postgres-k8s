@@ -7,17 +7,6 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-
-ENV HOST=""
-ENV PORT=""
-ENV DATABASE_HOST=""
-ENV DATABASE_PORT=""
-ENV DATABASE_NAME=""
-ENV DATABASE_USERNAME=""
-ENV DATABASE_PASSWORD=""
-ENV DATABASE_SSL=""
-ENV ADMIN_JWT_SECRET=""
-
 COPY package.json .
 RUN npm install
 
