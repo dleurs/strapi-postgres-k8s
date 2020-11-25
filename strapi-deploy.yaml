@@ -23,21 +23,48 @@ spec:
         resources: {}
         env:
         - name: HOST
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: HOST
         - name: PORT
-          value:"secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: PORT
         - name: DATABASE_HOST
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_HOST
         - name: DATABASE_PORT
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_PORT
         - name: DATABASE_NAME
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_NAME
         - name: DATABASE_USERNAME
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_USERNAME
         - name: DATABASE_PASSWORD
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_PASSWORD
         - name: DATABASE_SSL
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: DATABASE_SSL
         - name: ADMIN_JWT_SECRET
-          value: "secret"
+          valueFrom:
+            secretKeyRef:
+              name: strapi-postgres-secret
+              key: ADMIN_JWT_SECRET
 status: {}
